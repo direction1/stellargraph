@@ -106,7 +106,7 @@ steps:
         <<: *compose-config
         run: runner-3_6
         env:
-          STELLARGRAPH_NEO4J_HOST: "neo4j"
+          - STELLARGRAPH_NEO4J_HOST=neo4j
     agents:
       queue: "t2large"
 
