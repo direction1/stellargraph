@@ -3,8 +3,10 @@
 set -xeo pipefail
 
 echo "--- :python: installing stellargraph"
-# install stellargraph itself, which (hopefully) won't install any dependencies
-pip install .
+# install stellargraph itself and the dependencies necessary for neo4j, which (hopefully) won't
+# install any other ones. (The neo4j deps aren't installed into the docker image, so the main tests
+# run without them, validating they're properly optional.)
+pip install .[neo4j]
 
 echo "--- listing dependency versions"
 pip freeze
