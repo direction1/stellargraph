@@ -49,3 +49,5 @@ services:
 
   neo4j:
     build: docker/stellargraph-neo4j
+    environment:
+      NEO4J_AUTH: "neo4j/stellargraph"
